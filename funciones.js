@@ -74,14 +74,14 @@ function comprobarResultado(comprobacion) {
     var objetivo = document.getElementById("codigo").innerText.substring(0, comprobacion.length);
     console.log(objetivo);
 
-    if (comprobacion !== objetivo) terminarPartida(true);
+    if (comprobacion !== objetivo) terminarPartida();
     else if (document.getElementById("codigo").innerText === comprobacion) {
         terminarPartida(false);
     }
 
 }
 
-function terminarPartida(partidaPerdida) {
+function terminarPartida(partidaPerdida = true) {
     completado = true;
     musicaDeFondo.pause();
     musicaDeFondo.currentTime = 0;
