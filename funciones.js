@@ -89,7 +89,12 @@ function terminarPartida(partidaPerdida) {
         sonidoExplosion.volume = 0.07;
         sonidoExplosion.currentTime = 0;
         sonidoExplosion.play();
-        setTimeout(window.close, 2000)
+        try {
+            setTimeout(window.close, 2000)
+
+        } catch (error) {
+            controlPartida.style.display = "block";
+        }
     } else {
         controlPartida.style.display = "block";
     }
